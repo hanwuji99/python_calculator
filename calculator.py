@@ -5,7 +5,10 @@ import sys
 def calculator(salary):
     try:
         salary = int(salary)
-        taxable_income = salary - 3500 - salary * (16.5 / 100)
+        if salary > 3500:
+            taxable_income = salary - salary * (16.5 / 100) - 3500
+        else:
+            taxable_income = 0
         if taxable_income <= 1500:
             quick_calculation_deduction = 0
             tax_rate = 3 / 100
@@ -43,7 +46,7 @@ def print_info(args):
             arg = arg.split(':')
             # print('arg',arg)
             result = calculator(arg[1])
-            print(arg[0],":",result)
+            print(arg[0],":",format(result, ".2f"))
         except:
             print("Parameter Error")
 
