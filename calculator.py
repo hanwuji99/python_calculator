@@ -53,4 +53,8 @@ def print_info(args):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    print_info(args)
+    # print('args',args)
+    if len(args) < 1:
+        print("Parameter Error")
+    else:
+        print_info(args)
