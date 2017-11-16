@@ -46,7 +46,7 @@ def print_info(args):
             arg = arg.split(':')
             # print('arg',arg)
             result = calculator(arg[1])
-            print(arg[0],":",format(result, ".2f"))
+            print(arg[0]+":"+format(result, ".2f"))
         except:
             print("Parameter Error")
 
