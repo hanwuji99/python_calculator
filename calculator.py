@@ -70,7 +70,7 @@ class UserData(object):
             data = []
             for i in user_salary:
                 salary_info = []
-                salary_info.append(i[0])
+                salary_info.append(int(i[0]))
                 salary = int(i[1])
                 if salary < JiShuL:
                     taxable_income = 0
@@ -122,7 +122,7 @@ class UserData(object):
                 salary_after_tax = format((salary - float(social_security) - float(taxable_amount)), ".2f")
                 # 税前工资, 社保金额, 个税金额, 税后工资
 
-                salary_info.append(i[1])
+                salary_info.append(int(i[1]))
                 salary_info.append(social_security)
                 salary_info.append(taxable_amount)
                 salary_info.append(salary_after_tax)
@@ -146,8 +146,9 @@ class UserData(object):
 # outputfile = '/home/hope/PycharmProjects/python_calculator/gongzi.csv'
 
 if __name__ == "__main__":
-    try:
-        args = sys.argv[1:]
+
+    args = sys.argv[1:]
+    if len(args) == 6:
         index_c = args.index('-c')
         configfile = args[index_c + 1]
         # print('configfile',configfile)
@@ -160,6 +161,7 @@ if __name__ == "__main__":
         config = Config(configfile)
         userdata = UserData(userdatafile)
         userdata.dumptofile(outputfile)
-        # print('end')
-    except:
+    else:
         print("Parameter Error")
+        sys.exit(-1)
+    sys.exit(0)
