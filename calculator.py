@@ -52,13 +52,6 @@ class UserData(object):
         return
 
     def get_usersalary(self):
-        # salaries = []
-        # for i in self.userdata:
-        #     value = i[1]
-        #     salaries.append(value)
-        # print('salaries', salaries)
-        # return salaries
-        # print('userdata',self.userdata)
         return self.userdata
 
     def calculator(self):
@@ -141,33 +134,32 @@ class UserData(object):
 
     def dumptofile(self, outputfile):
         result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
-
-        # print(result,type(result))
-
-        if os.path.exists(outputfile) and outputfile.endswith("csv"):
-            try:
-                with open(outputfile, 'w') as file:
-                    file.write(result)
-            except:
-                print('Parameter Error')
-        else:
-            #     os.path.join('/home/hope/PycharmProjects/python_calculator',outputfile)
-            print("Parameter Error")
-
+        print('result',result,type(result))
+        # if os.path.exists(outputfile) and outputfile.endswith("csv"):
+        try:
+            with open(outputfile, 'w') as file:
+                file.write(result)
+        except:
+            print('Parameter Error')
 # configfile = '/home/hope/PycharmProjects/python_calculator/test.cfg'
 # userdatafile = '/home/hope/PycharmProjects/python_calculator/user.csv'
 # outputfile = '/home/hope/PycharmProjects/python_calculator/gongzi.csv'
 
 if __name__ == "__main__":
-
-    args = sys.argv[1:]
-    index_c = args.index('-c')
-    configfile = args[index_c + 1]
-    index_d = args.index('-d')
-    userdatafile = args[index_d + 1]
-    index_o = args.index('-o')
-    outputfile = args[index_d + 1]
-    config = Config(configfile)
-    userdata = UserData(userdatafile)
-    # userdata.calculator()
-    userdata.dumptofile(outputfile)
+    try:
+        args = sys.argv[1:]
+        index_c = args.index('-c')
+        configfile = args[index_c + 1]
+        # print('configfile',configfile)
+        index_d = args.index('-d')
+        userdatafile = args[index_d + 1]
+        # print('userdatafile',userdatafile)
+        index_o = args.index('-o')
+        outputfile = args[index_o + 1]
+        print('outputfile',outputfile.split('/')[-1])
+        config = Config(configfile)
+        userdata = UserData(userdatafile)
+        userdata.dumptofile(outputfile)
+        # print('end')
+    except:
+        print("Parameter Error")
