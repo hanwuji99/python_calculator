@@ -134,7 +134,7 @@ class UserData(object):
 
     def dumptofile(self, outputfile):
         result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
-        print('result',result,type(result))
+        # print('result',result,type(result))
         # if os.path.exists(outputfile) and outputfile.endswith("csv"):
         try:
             with open(outputfile, 'w') as file:
@@ -156,7 +156,7 @@ if __name__ == "__main__":
         # print('userdatafile',userdatafile)
         index_o = args.index('-o')
         outputfile = args[index_o + 1]
-        print('outputfile',outputfile.split('/')[-1])
+        # print('outputfile',outputfile.split('/')[-1])
         config = Config(configfile)
         userdata = UserData(userdatafile)
         userdata.dumptofile(outputfile)
