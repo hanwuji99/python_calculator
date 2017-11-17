@@ -134,7 +134,7 @@ class UserData(object):
 
     def dumptofile(self, outputfile):
         result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
-        print(result)
+        # print(result)
         # if os.path.exists(outputfile) and outputfile.endswith("csv"):
         try:
             with open(outputfile, 'w') as file:
