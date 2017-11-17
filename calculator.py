@@ -1,60 +1,173 @@
 #!/usr/bin/env python3
 import sys
+import os.path
+import json
+
+from decimal import Decimal
 
 
-def calculator(salary):
-    try:
-        salary = int(salary)
-        if salary > 3500:
-            taxable_income = salary - salary * (16.5 / 100) - 3500
+class Config(object):
+    def __init__(self, configfile):
+        self._config = {}
+        self.set_config(configfile)
+
+    def set_config(self, filename):
+        if os.path.exists(filename) and filename.endswith('cfg'):
+            try:
+                with open(filename) as file:
+                    for line in file:
+                        line_list = line.strip().split(' = ')
+                        k = line_list[0]
+                        v = line_list[1]
+                        self._config[k] = v
+                    # print('_config',self._config)
+                    return self._config
+            except:
+                print('Parameter Error')
         else:
-            taxable_income = 0
-        if taxable_income <= 1500:
-            quick_calculation_deduction = 0
-            tax_rate = 3 / 100
-        elif taxable_income > 1500 and taxable_income <= 4500:
-            quick_calculation_deduction = 105
-            tax_rate = 1 / 10
-        elif taxable_income > 4500 and taxable_income <= 9000:
-            quick_calculation_deduction = 555
-            tax_rate = 1 / 5
-        elif taxable_income > 9000 and taxable_income <= 35000:
-            quick_calculation_deduction = 1005
-            tax_rate = 1 / 4
-        elif taxable_income > 35000 and taxable_income <= 55000:
-            quick_calculation_deduction = 2755
-            tax_rate = 3 / 10
-        elif taxable_income > 55000 and taxable_income <= 80000:
-            quick_calculation_deduction = 5505
-            tax_rate = 35 / 100
-        elif taxable_income > 80000:
-            quick_calculation_deduction = 13505
-            tax_rate = 45 / 100
+            print("Parameter Error")
 
-        taxable_amount = taxable_income * tax_rate - quick_calculation_deduction
-        salary_after_tax = salary - salary * 16.5/100 - taxable_amount
-        # print(format(salary_after_tax, ".2f"))
-        return salary_after_tax
-
-    except:
-        print("Parameter Error")
+    def get_config(self, k):
+        return self._config[k]
 
 
-def print_info(args):
-    for arg in args:
+class UserData(object):
+    def __init__(self, userdatafile):
+        self.userdata = []
+        self.set_userdata(userdatafile)
+
+    def set_userdata(self, filename):
+        if os.path.exists(filename) and filename.endswith('csv'):
+            try:
+                with open(filename) as file:
+                    line_list = file.readlines()
+                    for line in line_list[:-1]:
+                        _line = line.strip().split(',')
+                        # print('_line',_line)
+                        self.userdata.append(_line)
+                    # print('userdata', self.userdata)
+                    return self.userdata
+            except:
+                print("Parameter Error")
+        return
+
+    def get_usersalary(self):
+        # salaries = []
+        # for i in self.userdata:
+        #     value = i[1]
+        #     salaries.append(value)
+        # print('salaries', salaries)
+        # return salaries
+        # print('userdata',self.userdata)
+        return self.userdata
+
+    def calculator(self):
         try:
-            arg = arg.split(':')
-            # print('arg',arg)
-            result = calculator(arg[1])
-            print(arg[0]+":"+format(result, ".2f"))
+            SheBaoRate = float(config.get_config('YangLao')) \
+                         + float(config.get_config('YiLiao')) \
+                         + float(config.get_config('ShiYe')) \
+                         + float(config.get_config('GongShang')) \
+                         + float(config.get_config('ShengYu')) \
+                         + float(config.get_config('GongJiJin'))
+            JiShuL = float(config.get_config('JiShuL'))
+            JiShuH = float(config.get_config('JiShuH'))
+            # print('JiShuH',JiShuH)
+            user_salary = self.get_usersalary()
+            # print('user_salary', user_salary)
+            data = []
+            for i in user_salary:
+                salary_info = []
+                salary_info.append(int(i[0]))
+                salary = int(i[1])
+                if salary < JiShuL:
+                    taxable_income = 0
+                    quick_calculation_deduction = 0
+                    tax_rate = 3 / 100
+                    # social_security = float('%.2f' % (JiShuL * SheBaoRate))
+                    social_security = "{:.2f}".format(JiShuL * SheBaoRate).strip()
+
+
+                elif salary > JiShuL and salary <= 3500:
+                    taxable_income = 0
+                    quick_calculation_deduction = 0
+                    tax_rate = 3 / 100
+                    # social_security = float('%.2f' % (salary * SheBaoRate))
+                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+
+                elif salary > 3500 and salary <= JiShuH:
+                    taxable_income = salary - salary * SheBaoRate - 3500
+                    # social_security = float('%.2f' % (salary * SheBaoRate))
+                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+
+                elif salary > JiShuH:
+                    taxable_income = salary - JiShuH * SheBaoRate - 3500
+                    # social_security = float('%.2f' % (JiShuH * SheBaoRate))
+                    social_security = "{:.2f}".format(JiShuH * SheBaoRate).strip()
+
+                if taxable_income <= 1500:
+                    quick_calculation_deduction = 0
+                    tax_rate = 3 / 100
+                elif taxable_income > 1500 and taxable_income <= 4500:
+                    quick_calculation_deduction = 105
+                    tax_rate = 1 / 10
+                elif taxable_income > 4500 and taxable_income <= 9000:
+                    quick_calculation_deduction = 555
+                    tax_rate = 1 / 5
+                elif taxable_income > 9000 and taxable_income <= 35000:
+                    quick_calculation_deduction = 1005
+                    tax_rate = 1 / 4
+                elif taxable_income > 35000 and taxable_income <= 55000:
+                    quick_calculation_deduction = 2755
+                    tax_rate = 3 / 10
+                elif taxable_income > 55000 and taxable_income <= 80000:
+                    quick_calculation_deduction = 5505
+                    tax_rate = 35 / 100
+                elif taxable_income > 80000:
+                    quick_calculation_deduction = 13505
+                    tax_rate = 45 / 100
+                taxable_amount = format((taxable_income * tax_rate - quick_calculation_deduction), ".2f")
+                salary_after_tax = format((salary - float(social_security) - float(taxable_amount)), ".2f")
+                # 税前工资, 社保金额, 个税金额, 税后工资
+
+                salary_info.append(int(i[1]))
+                salary_info.append(social_security)
+                salary_info.append(taxable_amount)
+                salary_info.append(salary_after_tax)
+                # print('salary_info', salary_info)
+                data.append(salary_info)
+            return data
         except:
             print("Parameter Error")
 
+    def dumptofile(self, outputfile):
+        result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
+
+        # print(result,type(result))
+
+        if os.path.exists(outputfile) and outputfile.endswith("csv"):
+            try:
+                with open(outputfile, 'w') as file:
+                    file.write(result)
+            except:
+                print('Parameter Error')
+        else:
+            #     os.path.join('/home/hope/PycharmProjects/python_calculator',outputfile)
+            print("Parameter Error")
+
+# configfile = '/home/hope/PycharmProjects/python_calculator/test.cfg'
+# userdatafile = '/home/hope/PycharmProjects/python_calculator/user.csv'
+# outputfile = '/home/hope/PycharmProjects/python_calculator/gongzi.csv'
 
 if __name__ == "__main__":
+
     args = sys.argv[1:]
-    # print('args',args)
-    if len(args) < 1:
-        print("Parameter Error")
-    else:
-        print_info(args)
+    index_c = args.index('-c')
+    configfile = args[index_c + 1]
+    index_d = args.index('-d')
+    userdatafile = args[index_d + 1]
+    index_o = args.index('-o')
+    outputfile = args[index_d + 1]
+    config = Config(configfile)
+    userdata = UserData(userdatafile)
+    # userdata.calculator()
+    userdata.dumptofile(outputfile)
