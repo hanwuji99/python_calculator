@@ -70,7 +70,7 @@ class UserData(object):
             data = []
             for i in user_salary:
                 salary_info = []
-                salary_info.append(int(i[0]))
+                salary_info.append(i[0])
                 salary = int(i[1])
                 if salary < JiShuL:
                     taxable_income = 0
@@ -122,10 +122,10 @@ class UserData(object):
                 salary_after_tax = format((salary - float(social_security) - float(taxable_amount)), ".2f")
                 # 税前工资, 社保金额, 个税金额, 税后工资
 
-                salary_info.append(int(i[1]))
-                salary_info.append(float(social_security))
-                salary_info.append(float(taxable_amount))
-                salary_info.append(float(salary_after_tax))
+                salary_info.append(i[1])
+                salary_info.append(social_security)
+                salary_info.append(taxable_amount)
+                salary_info.append(salary_after_tax)
                 # print('salary_info', type(social_security))
                 data.append(salary_info)
             return data
@@ -134,7 +134,7 @@ class UserData(object):
 
     def dumptofile(self, outputfile):
         result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
-        # print(result)
+        print(result)
         # if os.path.exists(outputfile) and outputfile.endswith("csv"):
         try:
             with open(outputfile, 'w') as file:
