@@ -76,8 +76,8 @@ class UserData(object):
                     taxable_income = 0
                     quick_calculation_deduction = 0
                     tax_rate = 3 / 100
-                    # social_security = '%.2f' % (JiShuL * SheBaoRate)
-                    social_security = "{:.2f}".format(JiShuL * SheBaoRate).strip()
+                    social_security = '%.2f' % (JiShuL * SheBaoRate)
+                    # social_security = "{:.2f}".format(JiShuL * SheBaoRate).strip()
                     # social_security = float(JiShuL * SheBaoRate)
 
 
@@ -85,20 +85,20 @@ class UserData(object):
                     taxable_income = 0
                     quick_calculation_deduction = 0
                     tax_rate = 3 / 100
-                    # social_security = '%.2f' % (salary * SheBaoRate)
-                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+                    social_security = '%.2f' % (salary * SheBaoRate)
+                    # social_security = "{:.2f}".format(salary * SheBaoRate).strip()
                     # social_security = float(salary * SheBaoRate)
 
                 elif salary > 3500 and salary <= JiShuH:
                     taxable_income = salary - salary * SheBaoRate - 3500
-                    # social_security = '%.2f' % (salary * SheBaoRate)
-                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+                    social_security = '%.2f' % (salary * SheBaoRate)
+                    # social_security = "{:.2f}".format(salary * SheBaoRate).strip()
                     # social_security = float(salary * SheBaoRate)
 
                 elif salary > JiShuH:
                     taxable_income = salary - JiShuH * SheBaoRate - 3500
-                    # social_security = '%.2f' % (JiShuH * SheBaoRate)
-                    social_security = "{:.2f}".format(JiShuH * SheBaoRate).strip()
+                    social_security = '%.2f' % (JiShuH * SheBaoRate)
+                    # social_security = "{:.2f}".format(JiShuH * SheBaoRate).strip()
                     # social_security = float(JiShuH * SheBaoRate)
 
                 if taxable_income <= 1500:
@@ -126,7 +126,7 @@ class UserData(object):
                 salary_after_tax = format((salary - float(social_security) - float(taxable_amount)), ".2f")
                 # 税前工资, 社保金额, 个税金额, 税后工资
 
-                salary_info.append(i[1])
+                salary_info.append(int(i[1]))
                 salary_info.append(social_security)
                 salary_info.append(taxable_amount)
                 salary_info.append(salary_after_tax)
