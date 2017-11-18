@@ -41,7 +41,7 @@ class UserData(object):
             try:
                 with open(filename) as file:
                     line_list = file.readlines()
-                    for line in line_list[:-1]:
+                    for line in line_list:
                         _line = line.strip().split(',')
                         # print('_line',_line)
                         self.userdata.append(_line)
@@ -64,7 +64,7 @@ class UserData(object):
                          + float(config.get_config('GongJiJin'))
             JiShuL = float(config.get_config('JiShuL'))
             JiShuH = float(config.get_config('JiShuH'))
-            # print('Sb',SheBaoRate,type(SheBaoRate))
+            # print('shebao',SheBaoRate,type(SheBaoRate))
             user_salary = self.get_usersalary()
             # print('user_salary', user_salary)
             data = []
@@ -76,8 +76,7 @@ class UserData(object):
                     taxable_income = 0
                     quick_calculation_deduction = 0
                     tax_rate = 3 / 100
-                    social_security = '%.2f' % (JiShuL * SheBaoRate)
-                    # social_security = "{:.2f}".format(JiShuL * SheBaoRate).strip()
+                    social_security = "{:.2f}".format(JiShuL * SheBaoRate).strip()
                     # social_security = float(JiShuL * SheBaoRate)
 
 
@@ -85,20 +84,17 @@ class UserData(object):
                     taxable_income = 0
                     quick_calculation_deduction = 0
                     tax_rate = 3 / 100
-                    social_security = '%.2f' % (salary * SheBaoRate)
-                    # social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
                     # social_security = float(salary * SheBaoRate)
 
                 elif salary > 3500 and salary <= JiShuH:
                     taxable_income = salary - salary * SheBaoRate - 3500
-                    social_security = '%.2f' % (salary * SheBaoRate)
-                    # social_security = "{:.2f}".format(salary * SheBaoRate).strip()
+                    social_security = "{:.2f}".format(salary * SheBaoRate).strip()
                     # social_security = float(salary * SheBaoRate)
 
                 elif salary > JiShuH:
                     taxable_income = salary - JiShuH * SheBaoRate - 3500
-                    social_security = '%.2f' % (JiShuH * SheBaoRate)
-                    # social_security = "{:.2f}".format(JiShuH * SheBaoRate).strip()
+                    social_security = "{:.2f}".format(JiShuH * SheBaoRate).strip()
                     # social_security = float(JiShuH * SheBaoRate)
 
                 if taxable_income <= 1500:
@@ -125,32 +121,26 @@ class UserData(object):
                 taxable_amount = format((taxable_income * tax_rate - quick_calculation_deduction), ".2f")
                 salary_after_tax = format((salary - float(social_security) - float(taxable_amount)), ".2f")
                 # 税前工资, 社保金额, 个税金额, 税后工资
-
-                salary_info.append(int(i[1]))
+                salary_info.append(i[1])
                 salary_info.append(social_security)
                 salary_info.append(taxable_amount)
                 salary_info.append(salary_after_tax)
-                # print('salary_info', type(social_security))
+                # print('salary_info',salary_info)
                 data.append(salary_info)
             return data
         except:
             print("Parameter Error")
 
     def dumptofile(self, outputfile):
-        # result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
         result = self.calculator()
         # print(result)
-        # if os.path.exists(outputfile) and outputfile.endswith("csv"):
         try:
             with open(outputfile, 'w') as file:
                 writer = csv.writer(file)
                 writer.writerows(result)
-                # file.write(result)
         except:
             print('Parameter Error')
-# configfile = '/home/hope/PycharmProjects/python_calculator/test.cfg'
-# userdatafile = '/home/hope/PycharmProjects/python_calculator/user.csv'
-# outputfile = '/home/hope/PycharmProjects/python_calculator/gongzi.csv'
+
 
 if __name__ == "__main__":
 
@@ -164,7 +154,7 @@ if __name__ == "__main__":
         # print('userdatafile',userdatafile)
         index_o = args.index('-o')
         outputfile = args[index_o + 1]
-        # print('outputfile',outputfile.split('/')[-1])
+        # print('outputfile',outputfile)
         config = Config(configfile)
         userdata = UserData(userdatafile)
         userdata.dumptofile(outputfile)
