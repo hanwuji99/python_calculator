@@ -2,9 +2,6 @@
 import sys
 import os.path
 import csv
-import os
-import json
-from multiprocessing import Process, Queue,Value
 
 
 class Config(object):
@@ -50,13 +47,12 @@ class UserData(object):
                     return self.userdata
             except:
                 print("Parameter Error")
-        else:
-            print("Parameter Error")
+        return
 
     def get_usersalary(self):
         return self.userdata
 
-    def calculator(self, user_salary):
+    def calculator(self):
         try:
             SheBaoRate = float(config.get_config('YangLao')) \
                          + float(config.get_config('YiLiao')) \
@@ -67,7 +63,7 @@ class UserData(object):
             JiShuL = float(config.get_config('JiShuL'))
             JiShuH = float(config.get_config('JiShuH'))
             # print('shebao',SheBaoRate,type(SheBaoRate))
-            # user_salary = self.get_usersalary()
+            user_salary = self.get_usersalary()
             # print('user_salary', user_salary)
             data = []
             for i in user_salary:
@@ -133,7 +129,8 @@ class UserData(object):
         except:
             print("Parameter Error")
 
-    def dumptofile(self, result, outputfile):
+    def dumptofile(self, outputfile):
+        result = self.calculator()
         # print(result)
         try:
             with open(outputfile, 'w') as file:
@@ -143,41 +140,8 @@ class UserData(object):
             print('Parameter Error')
 
 
-queue1 = Queue()
-queue2 = Queue()
+if __name__ == "__main__":
 
-
-#
-def f1():
-    data = userdata.get_usersalary()
-    # print('read',data)
-    # print('process_1:{}'.format(os.getpid()))
-    queue1.put(data)
-
-
-#
-def f2():
-    data = queue1.get()
-    # print('getq1data',data,type(data))
-    newdata = userdata.calculator(data)
-    # print('newdata',newdata,type(newdata))
-    queue2.put(newdata)
-    # print('process_2: {}'.format(os.getpid()))
-
-
-def f3():
-    newdata = queue2.get()
-    # print('getq2data',newdata,type(newdata))
-    userdata.dumptofile(newdata,outputfile)
-    # print('process_3: {}'.format(os.getpid()))
-
-def main():
-    Process(target=f1).start()
-    Process(target=f2).start()
-    Process(target=f3).start()
-
-
-if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) == 6:
         index_c = args.index('-c')
@@ -188,10 +152,10 @@ if __name__ == '__main__':
         # print('userdatafile',userdatafile)
         index_o = args.index('-o')
         outputfile = args[index_o + 1]
+        # print('outputfile',outputfile)
         config = Config(configfile)
         userdata = UserData(userdatafile)
-
-        main()
+        userdata.dumptofile(outputfile)
     else:
         print("Parameter Error")
         sys.exit(-1)

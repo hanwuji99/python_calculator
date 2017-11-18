@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="382a4610-9568-43f3-b766-35b3d73be389" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/file" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hello.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/calculator.py" afterPath="$PROJECT_DIR$/calculator.bak" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +31,96 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="calculator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calculator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
+                <element signature="e#159#908#0" expanded="false" />
+                <element signature="e#199#252#0" expanded="false" />
+                <element signature="e#298#847#0" expanded="false" />
+                <element signature="e#368#796#0" expanded="false" />
+                <element signature="e#389#735#0" expanded="false" />
+                <element signature="e#438#735#0" expanded="false" />
+                <element signature="e#480#643#0" expanded="false" />
+                <element signature="e#886#908#0" expanded="false" />
+                <element signature="e#981#1039#0" expanded="false" />
+                <element signature="e#1087#1661#0" expanded="false" />
+                <element signature="e#1157#1610#0" expanded="false" />
+                <element signature="e#1178#1549#0" expanded="false" />
+                <element signature="e#1227#1549#0" expanded="false" />
+                <element signature="e#1323#1453#0" expanded="false" />
+                <element signature="e#1701#1721#0" expanded="false" />
+                <element signature="e#1770#5517#0" expanded="false" />
+                <element signature="e#1787#5464#0" expanded="false" />
+                <element signature="e#2286#2331#0" expanded="false" />
+                <element signature="e#2502#5440#0" expanded="false" />
+                <element signature="e#2656#2915#0" expanded="false" />
+                <element signature="e#2995#3254#0" expanded="false" />
+                <element signature="e#3333#3535#0" expanded="false" />
+                <element signature="e#3595#3797#0" expanded="false" />
+                <element signature="e#3862#3932#0" expanded="false" />
+                <element signature="e#4024#4095#0" expanded="false" />
+                <element signature="e#4187#4257#0" expanded="false" />
+                <element signature="e#4350#4421#0" expanded="false" />
+                <element signature="e#4515#4587#0" expanded="false" />
+                <element signature="e#4681#4755#0" expanded="false" />
+                <element signature="e#4821#4896#0" expanded="false" />
+                <element signature="e#5840#5964#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/multiprocessing/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calculator.bak" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calculator.bak">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="139" column="36" lean-forward="true" selection-start-line="131" selection-start-column="4" selection-end-line="139" selection-end-column="36" />
+              <folding>
+                <element signature="e#88#837#0" expanded="false" />
+                <element signature="e#128#181#0" expanded="false" />
+                <element signature="e#227#776#0" expanded="false" />
+                <element signature="e#297#725#0" expanded="false" />
+                <element signature="e#318#664#0" expanded="false" />
+                <element signature="e#367#664#0" expanded="false" />
+                <element signature="e#409#572#0" expanded="false" />
+                <element signature="e#815#837#0" expanded="false" />
+                <element signature="e#1016#1554#0" expanded="false" />
+                <element signature="e#1252#1382#0" expanded="false" />
+                <element signature="e#1650#5395#0" expanded="false" />
+                <element signature="e#2380#5318#0" expanded="false" />
+                <element signature="e#2534#2793#0" expanded="false" />
+                <element signature="e#2873#3132#0" expanded="false" />
+                <element signature="e#3211#3413#0" expanded="false" />
+                <element signature="e#3473#3675#0" expanded="false" />
+                <element signature="e#3740#3810#0" expanded="false" />
+                <element signature="e#3902#3973#0" expanded="false" />
+                <element signature="e#4065#4135#0" expanded="false" />
+                <element signature="e#4228#4299#0" expanded="false" />
+                <element signature="e#4393#4465#0" expanded="false" />
+                <element signature="e#4559#4633#0" expanded="false" />
+                <element signature="e#4699#4774#0" expanded="false" />
+                <element signature="e#6255#6300#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,6 +148,7 @@
         <option value="$PROJECT_DIR$/userdata.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/sh" />
+        <option value="$PROJECT_DIR$/calculator.bak" />
         <option value="$PROJECT_DIR$/calculator.py" />
       </list>
     </option>
@@ -88,8 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,6 +192,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -135,7 +228,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="untitled" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculator.bak" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -304,8 +397,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="16" width="1368" height="717" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1719697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17424242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931036" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -313,7 +407,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931036" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23448277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25344828" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14482759" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -346,14 +440,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/calculator.py">
+    <entry file="file://$PROJECT_DIR$/calculator.bak">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculator.py">
+    <entry file="file://$PROJECT_DIR$/calculator.bak">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -446,10 +540,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/file">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculator.bak">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="139" column="36" lean-forward="true" selection-start-line="131" selection-start-column="4" selection-end-line="139" selection-end-column="36" />
+          <folding>
+            <element signature="e#88#837#0" expanded="false" />
+            <element signature="e#128#181#0" expanded="false" />
+            <element signature="e#227#776#0" expanded="false" />
+            <element signature="e#297#725#0" expanded="false" />
+            <element signature="e#318#664#0" expanded="false" />
+            <element signature="e#367#664#0" expanded="false" />
+            <element signature="e#409#572#0" expanded="false" />
+            <element signature="e#815#837#0" expanded="false" />
+            <element signature="e#1016#1554#0" expanded="false" />
+            <element signature="e#1252#1382#0" expanded="false" />
+            <element signature="e#1650#5395#0" expanded="false" />
+            <element signature="e#2380#5318#0" expanded="false" />
+            <element signature="e#2534#2793#0" expanded="false" />
+            <element signature="e#2873#3132#0" expanded="false" />
+            <element signature="e#3211#3413#0" expanded="false" />
+            <element signature="e#3473#3675#0" expanded="false" />
+            <element signature="e#3740#3810#0" expanded="false" />
+            <element signature="e#3902#3973#0" expanded="false" />
+            <element signature="e#4065#4135#0" expanded="false" />
+            <element signature="e#4228#4299#0" expanded="false" />
+            <element signature="e#4393#4465#0" expanded="false" />
+            <element signature="e#4559#4633#0" expanded="false" />
+            <element signature="e#4699#4774#0" expanded="false" />
+            <element signature="e#6255#6300#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/multiprocessing/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/calculator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state relative-caret-position="403">
+          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#159#908#0" expanded="false" />
+            <element signature="e#199#252#0" expanded="false" />
+            <element signature="e#298#847#0" expanded="false" />
+            <element signature="e#368#796#0" expanded="false" />
+            <element signature="e#389#735#0" expanded="false" />
+            <element signature="e#438#735#0" expanded="false" />
+            <element signature="e#480#643#0" expanded="false" />
+            <element signature="e#886#908#0" expanded="false" />
+            <element signature="e#981#1039#0" expanded="false" />
+            <element signature="e#1087#1661#0" expanded="false" />
+            <element signature="e#1157#1610#0" expanded="false" />
+            <element signature="e#1178#1549#0" expanded="false" />
+            <element signature="e#1227#1549#0" expanded="false" />
+            <element signature="e#1323#1453#0" expanded="false" />
+            <element signature="e#1701#1721#0" expanded="false" />
+            <element signature="e#1770#5517#0" expanded="false" />
+            <element signature="e#1787#5464#0" expanded="false" />
+            <element signature="e#2286#2331#0" expanded="false" />
+            <element signature="e#2502#5440#0" expanded="false" />
+            <element signature="e#2656#2915#0" expanded="false" />
+            <element signature="e#2995#3254#0" expanded="false" />
+            <element signature="e#3333#3535#0" expanded="false" />
+            <element signature="e#3595#3797#0" expanded="false" />
+            <element signature="e#3862#3932#0" expanded="false" />
+            <element signature="e#4024#4095#0" expanded="false" />
+            <element signature="e#4187#4257#0" expanded="false" />
+            <element signature="e#4350#4421#0" expanded="false" />
+            <element signature="e#4515#4587#0" expanded="false" />
+            <element signature="e#4681#4755#0" expanded="false" />
+            <element signature="e#4821#4896#0" expanded="false" />
+            <element signature="e#5840#5964#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
