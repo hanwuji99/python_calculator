@@ -2,7 +2,7 @@
 import sys
 import os.path
 import json
-
+import csv
 from decimal import Decimal
 
 
@@ -137,12 +137,15 @@ class UserData(object):
             print("Parameter Error")
 
     def dumptofile(self, outputfile):
-        result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
+        # result = str(self.calculator()).strip('[[ ]]').replace('[', '\n').replace('],', '')
+        result = self.calculator()
         # print(result)
         # if os.path.exists(outputfile) and outputfile.endswith("csv"):
         try:
             with open(outputfile, 'w') as file:
-                file.write(result)
+                writer = csv.writer(file)
+                writer.writerows(result)
+                # file.write(result)
         except:
             print('Parameter Error')
 # configfile = '/home/hope/PycharmProjects/python_calculator/test.cfg'
